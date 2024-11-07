@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yassinefahfouhi <yassinefahfouhi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:08:24 by yassine           #+#    #+#             */
-/*   Updated: 2024/10/01 16:23:00 by yassine          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:59:18 by yassinefahf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	j = -1;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)

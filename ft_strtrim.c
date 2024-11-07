@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yassinefahfouhi <yassinefahfouhi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 15:36:15 by yassine           #+#    #+#             */
-/*   Updated: 2024/10/11 18:04:50 by yassine          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:23:28 by yassinefahf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_begin(char const *s, char const *set)
+size_t	ft_begin(char const *s, char const *set)
 {
-	int	i;
-	int	j;
-	int	index;
+	size_t	i;
+	int		j;
+	int		index;
 
 	i = 0;
 	while (s[i])
@@ -33,12 +33,12 @@ char	*ft_begin(char const *s, char const *set)
 			break ;
 		i++;
 	}
-	return ((char *)(s + i));
+	return (i);
 }
 
-char	*ft_end(char const *s, char const *set)
+size_t	ft_end(char const *s, char const *set)
 {
-	int		len;
+	size_t	len;
 	size_t	i;
 	int		index;
 
@@ -57,17 +57,21 @@ char	*ft_end(char const *s, char const *set)
 			break ;
 		len--;
 	}
-	return ((char *)(s + len));
+	return (len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*begin;
-	char	*end;
+	size_t	begin;
+	size_t	end;
 	char	*dest;
-	int		i;
+	size_t	i;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
+	if (!set || !s1[0])
+		return (ft_strdup(s1));
 	begin = ft_begin(s1, set);
 	end = ft_end(s1, set);
 	dest = malloc ((end - begin + 2) * sizeof(char));
@@ -75,7 +79,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (begin + i <= end)
 	{
-		dest[i] = begin[i];
+		dest[i] = s1[begin + i];
 		i++;
 	}
 	dest[i] = '\0';
@@ -85,7 +89,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int	main()
 {
-	char	set[5] = ". ";
-	char	str[15] = ".hello...";
-	printf("%s", ft_strtrim(str, set));
+	char	*set = ". ";
+	char	*str = "";
+	printf("%s\n", ft_strtrim(str, set));
+	printf("%s\n", ft_strtrim("a", "ab"));
 }*/

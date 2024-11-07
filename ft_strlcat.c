@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yassinefahfouhi <yassinefahfouhi@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 16:54:14 by yassine           #+#    #+#             */
-/*   Updated: 2024/10/01 16:06:29 by yassine          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:24:00 by yassinefahf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	len_s;
 	size_t	len_d;
 
 	len_d = ft_strlen(dest);
-	len_s = ft_strlen(src);
 	if (size == 0)
-		return (len_s);
+		return (ft_strlen(src));
 	i = len_d;
 	j = 0;
 	while (src[j] && i < size - 1)
@@ -34,13 +32,13 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	if (i < size)
 		dest[i] = '\0';
 	if (size < len_d)
-		return (len_s + size);
+		return (ft_strlen(src) + size);
 	else
-		return (len_d + len_s);
+		return (len_d + ft_strlen(src));
 }
 /*
 #include <stdio.h>
-#include <bsd/string.h>
+#include <string.h>
 
 int	main()
 {
@@ -50,5 +48,6 @@ int	main()
 	
 	printf("ORIGINAL %ld\n",strlcat(buff1, buff2, 10));
 	printf("%ld", ft_strlcat(buff3, buff2, 10));
-}
-*/
+	// printf("ORIGINAL %ld\n",strlcat(buff1, NULL, 10));
+	// printf("%ld", ft_strlcat(buff3, NULL, 10));
+}*/
