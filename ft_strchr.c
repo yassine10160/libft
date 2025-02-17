@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassinefahfouhi <yassinefahfouhi@studen    +#+  +:+       +#+        */
+/*   By: yafahfou <yafahfou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 18:20:53 by yassine           #+#    #+#             */
-/*   Updated: 2024/11/06 14:32:34 by yassinefahf      ###   ########.fr       */
+/*   Updated: 2024/11/13 15:53:13 by yafahfou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)(s + i));
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
 
-int	main()
-{
-	char	buff1[20] = "hello world";
-	printf("ORIGINAL %s\n", strchr(buff1, '\0'));
-	printf("%s", ft_strchr(buff1, '\0'));
-}*/
+// #include <stdio.h>
+// #include <string.h>
+
+// int	main()
+// {
+// 	char	buff1[20] = "hello world";
+// 	printf("%s\n", strchr(buff1, '\0'));
+// 	printf("%s", ft_strchr(buff1, '\0'));
+// }

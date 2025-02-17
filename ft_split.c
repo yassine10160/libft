@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yassinefahfouhi <yassinefahfouhi@studen    +#+  +:+       +#+        */
+/*   By: yafahfou <yafahfou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 18:13:30 by yassine           #+#    #+#             */
-/*   Updated: 2024/11/06 17:52:33 by yassinefahf      ###   ########.fr       */
+/*   Updated: 2025/02/13 19:01:52 by yafahfou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_word(char const *s, char c)
+int	count_word(char const *s, char c)
 {
 	int	index;
 	int	cpt;
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	index = -1;
 	j = 0;
-	split = malloc((ft_count_word(s, c) + 1) * sizeof(char *));
+	split = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	while (++i <= (ssize_t)ft_strlen(s))
@@ -89,12 +89,3 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char	str[15] = "I/am/an/apple";
-	char	**s = ft_split(str, '/');
-	for (int i = 0; i < 4;i++)
-		printf("%s\n", s[i]);
-}*/
